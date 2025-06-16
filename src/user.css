@@ -1,0 +1,65 @@
+.user-container{
+    font-family: Roboto;
+    margin-left: 2rem;
+
+}
+.title{
+   display: flex;
+   align-items: center; 
+   gap: 1.5rem;
+   margin-top: 3rem;
+}
+.title h2{
+    font-size: 1.2em;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+.title span{
+    color: rgb(4,97,46);
+}
+#add-btn{
+    background: rgb(4,97,46);
+    align-items: center;
+    display: flex;
+    gap: 0.3rem;
+    color: white;
+    font-weight: 400;
+    border: none;
+    height: 2.4rem;
+    width: 10rem;
+    border-radius: 6px;
+    padding-left: 1.6rem;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+}
+#add-btn:hover{
+    background: none;
+    border: 2px solid rgb(4,97,46);
+    color: #000;
+}
+table{
+    margin-left: 0;
+    margin-top: 1rem;
+}
+table tbody td{
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+.actions{
+    display: flex;
+    gap: 1rem;
+    border: none;
+}
+#editing-btn,#delete-btn{
+    height: 1.8rem;
+    width: 4rem;
+    border-radius: 10px;
+    background: none;
+    cursor: pointer;
+    transition: all 400ms ease;
+    border: 1px solid rgb(4,97,46);
+}
+#editing-btn:hover,#delete-btn:hover{
+    background: rgb(4,97,46);
+    color: white;
+}

@@ -1,0 +1,9 @@
+.resources-container{
+    font-family: Roboto;
+    margin-left: 2rem;
+}
+table tbody td{
+    font-size: 0.8rem;
+    height: 2rem;
+    border-bottom: 1px solid rgb(225, 225, 225);
+}

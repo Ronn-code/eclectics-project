@@ -1,0 +1,63 @@
+.cancel-page{
+    font-family: Roboto;
+    height: 60vh;
+    width: 40%;
+    margin-top: 5rem;
+    margin-left: 30%;
+    background: rgb(240, 250, 245);
+    box-shadow: 2px 2px 5px rgb(16, 17, 16);
+}
+.top-cancel{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 4rem;
+}
+.top-cancel h3{
+    font-size: 1.2rem;
+}
+.top-cancel span{
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    color: #202020;
+}
+table{
+    width: 80%;
+    padding: 0.4rem;
+    margin-left: 4rem;
+}
+table thead tr{
+    font-size: 0.9rem;
+    text-align: left;
+}
+table tbody td{
+    text-align: start;
+    font-size: 0.7rem;
+    height: 2rem;
+}
+.action-btn{
+    display: flex;
+    gap: 1rem;
+}
+#remove-btn, #edit-btn{
+    height: 1.6rem;
+    width: 4rem;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+#remove-btn{
+    background: rgb(151, 3, 3);
+}
+#remove-btn:hover{
+    background-color: rgb(18, 20, 19);
+}
+#edit-btn{
+    background: rgb(4, 97, 46);
+}
+#edit-btn:hover{
+    background-color: rgb(18, 20, 19);
+}

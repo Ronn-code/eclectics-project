@@ -1,0 +1,13 @@
+.rooms-container{
+    font-family: Roboto;
+    margin-left: 2rem;
+}
+.bars{
+    display: flex;
+    align-items: center;
+}
+.my-search-bar{
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    width: 40%;
+}

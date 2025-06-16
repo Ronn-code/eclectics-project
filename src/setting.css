@@ -1,0 +1,83 @@
+.setting-page{
+    font-family: Roboto;
+    height: 90vh;
+    background: rgb(248, 248, 248);
+    width: 30%;
+    margin-top: 3rem;
+    margin-left: 30%;
+}
+.setting-page h2{
+    font-size: 1.2rem;
+    padding-top: 1.6rem;
+    align-items: center;
+}
+.user-profile{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 1.6rem;
+}
+.user-profile img{
+    border-radius: 50%;
+    height: 3rem;
+    margin-left: 2rem;
+}
+.user-profile h3{
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+.input-fields{
+    display: block;
+}
+.input{
+    display: block;
+}
+.top-name, .top-email{
+    display: flex;
+    align-items: center;
+    gap: 14rem;
+}
+.top-id, .top-phone{
+    display: flex;
+    align-items: center;
+    gap: 13rem;
+}
+.top-phone{
+    gap: 11rem;
+}
+.top-name h4, .top-email h4{
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-left: 2rem;
+}
+.top-id h4, .top-phone h4{
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-left: 2rem;
+}
+.top-name span, .top-email span{
+    font-size: 1rem;
+    color: #333;
+}
+.top-id span, .top-phone span{
+    font-size: 1rem;
+    color: #333;
+}
+input{
+    height: 1.8rem;
+    width: 70%;
+    margin-left: 2rem;
+    border-radius: 10px;
+    border: 2px solid rgb(7, 90, 46);
+}
+#save-btn{
+    background: rgb(7, 90, 46);
+    border: none;
+    height: 2rem;
+    margin-left: 2rem;
+    width: 72%;
+    border-radius: 10px;
+    margin-top: 2rem;
+    color: white;
+}

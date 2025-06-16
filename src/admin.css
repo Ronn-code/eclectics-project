@@ -1,0 +1,92 @@
+.admin-container{
+    display: grid;
+    grid-template-columns: 24rem auto;
+    font-family: Roboto;
+}
+.admin-container h2{
+    color: rgb(4, 97, 46);
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+.admin-aside{
+    background: rgb(143, 167, 154);
+    margin-top: 0;
+}
+.side-links{
+    list-style: none;
+    display: block;
+}
+.details{
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+}
+.details a{
+    text-decoration: none;
+    color: #000;
+}
+.details span{
+    color: rgb(4, 97, 46);
+    cursor: pointer;
+}
+.details h4{
+    font-size: 0.9rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+.side-links li:last-child{
+  margin-top: 6rem;
+}
+
+main{
+    margin-left: 1rem;
+    margin-top: 2rem;
+}
+.upper-main{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.upper-div,.upper-div-two,.upper-div-three{
+    background: rgb(143, 167, 154);
+    border-radius: 20px;
+    height: 8rem;
+    width: 14rem;
+    transition: all 300ms ease;
+}
+.upper-div-two{
+    background: rgb(102,128,154);
+}
+.upper-div-three{
+    background: rgb(169,140,116);
+}
+.upper-div:hover,.upper-div-two:hover,.upper-div-three:hover{
+    background: rgb(204, 205, 204);
+}
+.upper-div h3,.upper-div-two h3,.upper-div-three h3{
+    margin-left: 1.0rem;
+    font-size: 1rem;
+    color: #000;
+}
+.upper-div h1,.upper-div-two h1,.upper-div-three h1{
+    font-size: 1.4rem;
+    color: rgb(4, 97, 46); 
+    margin-left: 1.0rem;  
+}
+.body-main h3{
+    margin-left: 0rem;
+}
+#review-btn{
+    height: 1.8rem;
+    width: 4rem;
+    margin-right: 2rem;
+    border-radius: 6px;
+    border: 1px solid rgb(4, 97, 46);
+    background: none;
+    color: rgb(4, 97, 46);
+    cursor: pointer;
+}
+#review-btn:hover{
+    background: rgb(4, 97, 46);
+    color: white;
+}

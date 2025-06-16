@@ -1,0 +1,74 @@
+.login-page{
+    height: 70vh;
+    margin-top: 5rem;
+    margin-left: 30%;
+    width: 30%;
+    background: rgb(255, 255, 255);
+    box-shadow: 2px 2px 4px #333;
+}
+.top-login{
+    display: block;
+    text-align: center;
+}
+.top-login img{
+    height: 4rem;
+    border-radius: 50%;
+    margin-top: 2rem;
+}
+.top-login h2{
+    font-size: 1.4rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+}
+.inputs{
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+.input-wrapper{
+    width: 80%;
+    margin-left: 0rem;
+}
+.input-wrapper input{
+    width: 70%;
+    height: 0.4rem;
+    padding: 12px 12px 12px 4rem;
+    border: 1px solid #333;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    outline: none;
+}
+#login-btn{
+    width: 75%;
+    margin-left: 2rem;
+    margin-top: 1.4rem;
+    height: 2rem;
+    border-radius: 6px;
+    border: none;
+    background-color: rgb(7, 90, 46);
+    color: white;
+}
+.forgot-details{
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    margin-left: 2rem;
+}
+.forgot-details a{
+    font-size: 0.6rem;
+    text-decoration: underline;
+    color: rgb(9, 88, 179);
+}
+.remember-me{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.remember-me span{
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+.remember-me h4{
+    font-size: 0.6rem;
+    font-weight: 400;
+}
