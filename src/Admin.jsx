@@ -38,13 +38,15 @@ function Admin (){
                     <li className='link-details'>
                         <div className="details">
                             <span className='material-icons-sharp'>settings</span>
-                            <h4>Settings</h4>
+                            <Link to='/setting'>
+                            <h4>Settings</h4></Link>
                         </div>
                     </li>
                      <li className='link-details'>
                         <div className="details">
                             <span className='material-icons-sharp'>logout</span>
-                            <h4>Logout</h4>
+                            <Link to='/alogin'>
+                            <h4>Logout</h4></Link>
                         </div>
                     </li>
                 </ul>

@@ -1,6 +1,7 @@
 import Home from "./Home"
 import Cancel from "./Cancel";
 import Login from "./Login";
+import Alogin from "./Alogin";
 import Setting from "./Setting";
 import Form from "./Form";
 import Admin from "./Admin";
@@ -18,6 +19,7 @@ function App() {
         <Route path='/'element={<Home/>}/>
         <Route path="/cancel" element={<Cancel/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/alogin" element={<Alogin/>}/>
         <Route path="/setting" element={<Setting/>}/>
         <Route path='/form' element={<Form/>}/>
         <Route path="/admin"element={<Admin/>}/>
