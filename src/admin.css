@@ -48,17 +48,17 @@ main{
     gap: 2rem;
 }
 .upper-div,.upper-div-two,.upper-div-three{
-    background: rgb(143, 167, 154);
+    background: rgb(118, 157, 149);
     border-radius: 20px;
     height: 8rem;
     width: 14rem;
     transition: all 300ms ease;
 }
 .upper-div-two{
-    background: rgb(102,128,154);
+    background: rgb(253, 196, 207);
 }
 .upper-div-three{
-    background: rgb(169,140,116);
+    background: rgb(252, 217, 187);
 }
 .upper-div:hover,.upper-div-two:hover,.upper-div-three:hover{
     background: rgb(204, 205, 204);

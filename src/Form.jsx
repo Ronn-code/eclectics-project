@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import './form.css';
 
@@ -8,6 +8,7 @@ function Form(){
 const [today, setToday] = useState('');
 const [date, setDate] = useState('');
 const [time, setTime] = useState('');
+const Navigate = useNavigate('');
 
 useEffect(() =>{
     const now = new Date();
@@ -21,6 +22,7 @@ const handleSave = () =>{
         return;
     }
     alert('Booking saved successfully');
+    Navigate('/')
 };
 
 const handleEdit =() =>{
