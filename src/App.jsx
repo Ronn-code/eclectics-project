@@ -9,6 +9,9 @@ import Resource1 from "./Resource1";
 import User from "./User";
 import Resources from "./Resources";
 import Rooms from "./Rooms";
+import Addroom from "./Addroom";
+import Addresource from "./Addresource";
+import Adduser from "./Adduser";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
@@ -26,6 +29,9 @@ function App() {
         <Route path="/resource1"element={<Resource1/>}/>
         <Route path="/user"element={<User/>}/>
         <Route path="/rooms"element={<Rooms/>}/>
+        <Route path="/addroom" element={<Addroom/>}/>
+        <Route path="/addresource" element={<Addresource/>}/>
+        <Route path="/adduser" element={<Adduser/>}/>
         <Route path="/resources"element={<Resources/>}/>
       </Routes></BrowserRouter>
   );

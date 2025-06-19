@@ -1,4 +1,5 @@
 import './rooms.css';
+import { Link } from 'react-router-dom';
 
 function Rooms(){
     return(
@@ -8,7 +9,8 @@ function Rooms(){
                 <h2>Room Management</h2>
             </div>
             <div className="bars">
-                <button id='add-btn'><span className='material-icons-sharp'>add</span>Add Room</button>
+                <Link to='/addroom'>
+                <button id='add-btn'><span className='material-icons-sharp'>add</span>Add Room</button></Link>
                 <input type='search-bar' className='my-search-bar' placeholder='search by room number'></input>
             </div>
             <table>

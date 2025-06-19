@@ -86,10 +86,6 @@ const navigate = useNavigate();
                     }}
                 />
 
-                <select className='filter'>
-                    <option value='resources'>Resources</option>
-                    <option value='Capacity'>Capacity</option>
-                </select>
             </div>
             <h3>Available Rooms Today</h3>
             <div className='all-rooms'>

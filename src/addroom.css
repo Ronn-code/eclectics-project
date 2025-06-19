@@ -1,0 +1,60 @@
+.add-room-container,.add-resource-container{
+    font-family: Roboto;
+    margin-left: 20rem;
+    width: 50%;
+    margin-top: 5rem;
+    background: rgb(233, 232, 232);
+}
+h2{
+   margin-left: 15rem;
+   padding-top: 2rem;
+   padding-bottom: 1.5rem;
+   font-size: 1rem;
+   font-weight: 400;
+}
+.room-number,.room-type,.capacity,.resource-name,.quantity,.assign{
+  display: flex;
+  flex-direction: column;
+}
+
+label{
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    margin-left: 10rem;
+}
+.add-resource-container input[type="text"],
+.add-resource-container input[type="number"],
+.add-room-container input[type="number"],
+.add-room-container input[type="text"], 
+select {
+
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 10rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 50%;
+}
+select:invalid {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+#add{
+    height: 2rem;
+    width: 50%;
+    margin-left: 10rem;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    background: rgb(1,97,46);
+    transition: all 300ms ease;
+    margin-bottom: 2rem;
+}
+#add:hover{
+    background: none;
+    border: 2px solid rgb(1,97,46);
+    color: black;
+}

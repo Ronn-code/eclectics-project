@@ -1,4 +1,5 @@
 import './user.css';
+import { Link } from 'react-router-dom';
 
 function User(){
     return(
@@ -7,7 +8,8 @@ function User(){
                 <span className='material-icons-sharp'>group</span>
                 <h2>User Management</h2>
             </div>
-            <button id='add-btn'><span className='material-icons-sharp'>add</span>Add User</button>
+            <Link to='/adduser'>
+            <button id='add-btn'><span className='material-icons-sharp'>add</span>Add User</button></Link>
             <table>
                 <thead>
                     <tr>

@@ -7,3 +7,6 @@ table tbody td{
     height: 2rem;
     border-bottom: 1px solid rgb(225, 225, 225);
 }
+a{
+    text-decoration: none;
+}

@@ -1,4 +1,5 @@
 import './resources.css';
+import { Link } from 'react-router-dom';
 
 function Resources(){
     return(
@@ -7,7 +8,8 @@ function Resources(){
                 <span className='material-icons-sharp'>build</span>
                 <h2>Resources Management</h2>
             </div>
-            <button id='add-btn'><span className='material-icons-sharp'>add</span>Add Resource</button>
+            <Link to='/addresource'>
+            <button id='add-btn'><span className='material-icons-sharp'>add</span>Add Resource</button></Link>
             <table>
                 <thead>
                     <tr>

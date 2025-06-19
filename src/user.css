@@ -3,6 +3,9 @@
     margin-left: 2rem;
 
 }
+a{
+    text-decoration: none;
+}
 .title{
    display: flex;
    align-items: center; 
