@@ -17,7 +17,7 @@ function Login() {
     };
     const handleLogin = () => {
     if (!isValidEmail(email)) {
-      alert('Please enter a valid email address');
+      alert('Please enter  email address');
       return;
     }
     if (!password) {
