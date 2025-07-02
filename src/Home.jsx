@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
 import profile from './images/profile3.jpg';
 import room1 from './images/room1.jpg'
@@ -11,7 +11,21 @@ import { useNavigate } from 'react-router-dom';
 
 function Home() {
 
-    
+const [rooms, setRooms] = useState([]);
+
+useEffect(() => {
+    fetch('http://localhost:8080/api/rooms')
+     .then(res => {
+        if(!res.ok){
+            throw new Error('Network not responding');
+        }
+        return res.json();
+     })
+     .then(data => setRooms(data))
+     .catch(err => {
+        console.error('Failed to fetch room data:', err);
+     });
+}, []);
 
 const [searchTerm, setSearchTerm] = useState('');
 const navigate = useNavigate();
@@ -34,15 +48,13 @@ const navigate = useNavigate();
                    <sup> <span className='material-icons-sharp'>circle</span></sup>
                 </div>
             </div>
-            {/*--------before clicking header dropdown---*/}
             <div className="bookings">
                 <span className="material-icons-sharp">event</span>
                 <h4> My Bookings</h4>
                 <span className='material-icons-sharp' onClick={() => setIsOpen(!isOpen)}>
                     {isOpen ? 'expand_less' : 'expand_more'}
                 </span>
-            </div>
-       {/*---------------dropdown-icon functionality----*/}     
+            </div>   
             {isOpen &&(
                 <ul className='dropdown-list'>
                   {bookings.map((booking, index) =>(
@@ -114,6 +126,15 @@ const navigate = useNavigate();
                 <div className='rooms-row'>
                     <div className="rooms">
                         <img src={room4}></img>
+                        {rooms.map((room, index) =>(
+                           <div className="room-details" key={index}>
+                            <h4><b>{room.room_number}</b></h4>
+                            <h4><b>{room.room_type}</b></h4>
+                            <h4><b>{room.equipment.join(', ')}</b></h4>
+                            <Link to='/form'>
+                            <button id='book-btn'>Add booking</button></Link>
+                        </div> 
+                        ))}
                         <div className="room-details">
                             <h4><b>Room no: 102</b></h4>
                             <h4><b>Capacity:</b> maximum 60 students</h4>

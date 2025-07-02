@@ -2,10 +2,22 @@
     font-family: Roboto;
     margin-left: 2rem;
 }
-table tbody td{
-    font-size: 0.8rem;
-    height: 2rem;
-    border-bottom: 1px solid rgb(225, 225, 225);
+.resources-container table{
+    margin-left: 16%;
+    margin-top: 1rem;
+    width: 70%;
+    background: white;
+    box-shadow: 2px  2px 3px gray;
+    padding: 1rem;
+    padding-left: 2rem;
+}
+.resources-container table tbody td{
+   border: none;
+    height: 2.2rem;
+    font-size: 0.75rem;
+}
+.resources-container table thead th{
+    text-align: start;
 }
 a{
     text-decoration: none;

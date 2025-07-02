@@ -1,7 +1,13 @@
 import './resources.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Resources(){
+
+    const Navigate = useNavigate('');
+    const handleDelete = () => {
+        alert(`Are You Sure You Want To Delete Data`);
+        Navigate('/admin');
+    }
     return(
         <div className="resources-container">
             <div className="title">
@@ -20,75 +26,39 @@ function Resources(){
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Whiteboards</td>
-                        <td>32</td>
-                        <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
                         <td>Projector</td>
                         <td>23</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/addresource'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                     <tr>
-                        <td>DScreens</td>
-                        <td>125</td>
+                        <td>Screen</td>
+                        <td>31</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Whiteboards</td>
-                        <td>21</td>
-                        <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/addresource'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                     <tr>
                         <td>Computers</td>
                         <td>76</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/addresource'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                     <tr>
-                        <td>Screens</td>
+                        <td>Whiteboard</td>
                         <td>12</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Screens</td>
-                        <td>2</td>
-                        <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Whiteboards</td>
-                        <td>5</td>
-                        <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Projectors</td>
-                        <td>10</td>
-                        <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/addresource'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                 </tbody>

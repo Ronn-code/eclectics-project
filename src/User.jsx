@@ -1,7 +1,14 @@
 import './user.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function User(){
+    
+    const Navigate = useNavigate('');
+
+    const handleDelete = () => {
+        alert(`Are You Sure You Want To Delete Data`);
+        Navigate('/admin')
+    }
     return(
         <div className="user-container">
             <div className="title">
@@ -25,8 +32,9 @@ function User(){
                         <td>albertsimiyu@gmail.com</td>
                         <td>Lecturer</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/adduser'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                     <tr>
@@ -34,8 +42,9 @@ function User(){
                         <td>albertsimiyu@gmail.com</td>
                         <td>Lecturer</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/adduser'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                     <tr>
@@ -43,8 +52,9 @@ function User(){
                         <td>albertsimiyu@gmail.com</td>
                         <td>Lecturer</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/adduser'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                     <tr>
@@ -52,8 +62,9 @@ function User(){
                         <td>albertsimiyu@gmail.com</td>
                         <td>Lecturer</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/adduser'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                     <tr>
@@ -61,8 +72,9 @@ function User(){
                         <td>albertsimiyu@gmail.com</td>
                         <td>Lecturer</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/adduser'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                     <tr>
@@ -70,8 +82,9 @@ function User(){
                         <td>albertsimiyu@gmail.com</td>
                         <td>Lecturer</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/adduser'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                     <tr>
@@ -79,8 +92,9 @@ function User(){
                         <td>albertsimiyu@gmail.com</td>
                         <td>Lecturer</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/adduser'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                     <tr>
@@ -88,26 +102,9 @@ function User(){
                         <td>albertsimiyu@gmail.com</td>
                         <td>Lecturer</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dr.Albert Simiyu</td>
-                        <td>albertsimiyu@gmail.com</td>
-                        <td>Lecturer</td>
-                        <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dr.Albert Simiyu</td>
-                        <td>albertsimiyu@gmail.com</td>
-                        <td>Lecturer</td>
-                        <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/adduser'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                 </tbody>

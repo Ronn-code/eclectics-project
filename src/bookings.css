@@ -1,0 +1,39 @@
+.booking-container{
+    font-family: roboto;
+}
+.top{
+   display: flex;
+   align-items: center; 
+   gap: 1.5rem;
+   margin-top: 3rem;
+   margin-left: 10%;
+}
+.top h2{
+    font-size: 1.2em;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    
+}
+.top span{
+    color: rgb(4,97,46);
+}
+.booking-container table{
+    background: white;
+    box-shadow: 2px 2px 4px gray;
+    padding: 1.2rem;
+    margin-left: 10%;
+    margin-top: 1.4rem;
+    width: 78%;
+}
+.booking-container table tbody td{
+    text-align: left;
+    height: 2.4rem;
+    font-size: 0.76rem;
+}
+.booking-container table thead th{
+    text-align: start;
+} a{
+    color: rgb(4,97,46);
+    cursor: pointer;
+}

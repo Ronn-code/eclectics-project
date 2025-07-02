@@ -32,13 +32,14 @@ function Admin (){
                      <li className='link-details'>
                         <div className="details">
                             <span className='material-icons-sharp'>check_circle_outline</span>
-                            <h4>Room Bookings</h4>
+                            <Link to='/bookings'>
+                            <h4>Room Bookings</h4></Link>
                         </div>
                     </li>
                     <li className='link-details'>
                         <div className="details">
                             <span className='material-icons-sharp'>settings</span>
-                            <Link to='/setting'>
+                            <Link to='/asetting'>
                             <h4>Settings</h4></Link>
                         </div>
                     </li>
@@ -58,21 +59,24 @@ function Admin (){
                         <h1>1394</h1>
                     </div>
                     <div className="upper-div-two">
+                        <Link to='/rooms'>
                         <h3>Rooms Available</h3>
-                        <h1>2400</h1>
+                        <h1>2400</h1></Link>
                     </div>
                     <div className="upper-div-three">
+                        <Link to='/bookings'>
                         <h3>Upcoming Bookings</h3>
-                        <h1>502</h1>
+                        <h1>502</h1></Link>
                     </div>
                     
                 </div>
                 <div className="body-main">
-                    <h3>Upcoming Bookings</h3>
+                    <h3>Booking History</h3>
                     <table>
                         <thead>
                             <tr>
                                 <th>Name</th>
+                                <th>Email</th>
                                 <th>Room number</th>
                                 <th>Capacity</th>
                                 <th>Action</th>
@@ -81,6 +85,7 @@ function Admin (){
                         <tbody>
                             <tr>
                                 <td>Ann Culhane</td>
+                                <td>annculhane@gmail.co</td>
                                 <td>102</td>
                                 <td>100+</td>
                                 <td className='actions'>
@@ -89,6 +94,7 @@ function Admin (){
                             </tr>
                             <tr>
                                 <td>Ann Culhane</td>
+                                <td>annculhane@gmail.co</td>
                                 <td>102</td>
                                 <td>100+</td>
                                 <td className='actions'>
@@ -97,6 +103,7 @@ function Admin (){
                             </tr>
                             <tr>
                                 <td>Ann Culhane</td>
+                                <td>annculhane@gmail.co</td>
                                 <td>102</td>
                                 <td>100+</td>
                                 <td className='actions'>
@@ -105,6 +112,7 @@ function Admin (){
                             </tr>
                             <tr>
                                 <td>Ann Culhane</td>
+                                <td>annculhane@gmail.co</td>
                                 <td>102</td>
                                 <td>100+</td>
                                 <td className='actions'>
@@ -113,6 +121,7 @@ function Admin (){
                             </tr>
                             <tr>
                                 <td>Ann Culhane</td>
+                                <td>annculhane@gmail.co</td>
                                 <td>102</td>
                                 <td>100+</td>
                                 <td className='actions'>
@@ -121,36 +130,14 @@ function Admin (){
                             </tr>
                             <tr>
                                 <td>Ann Culhane</td>
+                                <td>annculhane@gmail.co</td>
                                 <td>102</td>
                                 <td>100+</td>
                                 <td className='actions'>
                                     <button id='review-btn'>Review</button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Ann Culhane</td>
-                                <td>102</td>
-                                <td>100+</td>
-                                <td className='actions'>
-                                    <button id='review-btn'>Review</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ann Culhane</td>
-                                <td>102</td>
-                                <td>100+</td>
-                                <td className='actions'>
-                                    <button id='review-btn'>Review</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ann Culhane</td>
-                                <td>102</td>
-                                <td>100+</td>
-                                <td className='actions'>
-                                    <button id='review-btn'>Review</button>
-                                </td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>

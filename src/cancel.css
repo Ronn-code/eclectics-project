@@ -1,17 +1,18 @@
 .cancel-page{
     font-family: Roboto;
     height: 60vh;
-    width: 40%;
+    width: 70%;
     margin-top: 5rem;
-    margin-left: 30%;
-    background: rgb(240, 250, 245);
+    margin-left: 10%;
+    border-radius: 12px;
+    background: white;
     box-shadow: 2px 2px 5px rgb(16, 17, 16);
 }
 .top-cancel{
     display: flex;
     align-items: center;
     gap: 2rem;
-    margin-left: 4rem;
+    margin-left: 6rem;
 }
 .top-cancel h3{
     font-size: 1.2rem;
@@ -22,32 +23,45 @@
     cursor: pointer;
     color: #202020;
 }
-table{
-    width: 80%;
-    padding: 0.4rem;
-    margin-left: 4rem;
+.cancel-page table{
+    width: 100%;
+    padding: 0.6rem;
+    margin-left: 0rem;
+    border-collapse: collapse;
 }
-table thead tr{
+.cancel-page table thead{
+    background: rgb(155, 154, 154);
+    color: rgb(236, 231, 231);
+}
+.cancel-page table thead tr{
     font-size: 0.9rem;
     text-align: left;
+    height: 2.6rem;
 }
-table tbody td{
+.cancel-page table thead th{
+    padding-left: 1.2rem;
+}.cancel-page tbody .top-row td{
+    padding-top: 1.2rem;
+}
+.cancel-page tbody td{
     text-align: start;
     font-size: 0.7rem;
-    height: 2rem;
+    height: 2.2rem;
+    padding-left: 1.2rem;
 }
 .action-btn{
     display: flex;
     gap: 1rem;
 }
 #remove-btn, #edit-btn{
-    height: 1.6rem;
-    width: 4rem;
-    border-radius: 6px;
+    height: 1.8rem;
+    width: 5rem;
+    border-radius: 8px;
     border: none;
     color: white;
     cursor: pointer;
     transition: all 300ms ease;
+    font-size: 0.76rem;
 }
 #remove-btn{
     background: rgb(151, 3, 3);

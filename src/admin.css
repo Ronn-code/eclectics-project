@@ -10,7 +10,7 @@
     margin-left: 2rem;
 }
 .admin-aside{
-    background: rgb(143, 167, 154);
+    background: rgb(233, 231, 231);
     margin-top: 0;
 }
 .side-links{
@@ -53,6 +53,7 @@ main{
     border-radius: 20px;
     height: 8rem;
     width: 14rem;
+    box-shadow: 2px 2px 3px gray;
     transition: all 300ms ease;
 }
 .upper-div-two{
@@ -76,6 +77,24 @@ main{
 }
 .body-main h3{
     margin-left: 0rem;
+}
+.body-main table{
+    background: white;
+    border-radius: 20px;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px gray;
+    width: 80%;
+}
+.body-main table tbody td{
+    height: 2.2rem;
+    width: 10rem;
+    border: none;
+    font-size: 0.76rem;
+   
+}
+.body-main table thead th{
+    text-align: start;
 }
 #review-btn{
     height: 1.8rem;

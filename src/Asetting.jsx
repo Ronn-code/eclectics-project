@@ -3,7 +3,7 @@ import './setting.css';
 import profile from './images/profile3.jpg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-function Setting() {
+function Asetting() {
 
 
     const[name, setName]= useState('');
@@ -43,7 +43,7 @@ function Setting() {
         }
         else{
             alert(`Updated Account details success`);
-            Navigate('/')
+            Navigate('/admin')
         }
     }
 
@@ -103,4 +103,4 @@ function Setting() {
         </div>
     );
 }
-export default Setting;
+export default Asetting;

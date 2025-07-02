@@ -1,7 +1,14 @@
 import './rooms.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Rooms(){
+
+    const Navigate = useNavigate('');
+
+    const handleDelete = () => {
+        alert(`Are You Sure You Want To Delete Data`);
+        Navigate('/admin');
+    }
     return(
         <div className="rooms-container">
             <div className="title">
@@ -26,37 +33,31 @@ function Rooms(){
                     <tr>
                         <td>26</td>
                         <td>121</td>
-                        <td>Good condition</td>
+                        <td>Available</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/addroom'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                     <tr>
                         <td>60</td>
                         <td>30</td>
-                        <td>Good condition</td>
+                        <td>Booked</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/addroom'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                     <tr>
                         <td>87</td>
                         <td>112</td>
-                        <td>Under maintenance</td>
+                        <td>Available</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>26</td>
-                        <td>121</td>
-                        <td>Good condition</td>
-                        <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/addroom'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                     <tr>
@@ -64,62 +65,19 @@ function Rooms(){
                         <td>100</td>
                         <td>Under maintenance</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/addroom'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                     <tr>
-                        <td>26</td>
-                        <td>121</td>
-                        <td>Good condition</td>
+                        <td>107</td>
+                        <td>222</td>
+                        <td>Available</td>
                         <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>26</td>
-                        <td>121</td>
-                        <td>Good condition</td>
-                        <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>60</td>
-                        <td>30</td>
-                        <td>Good condition</td>
-                        <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>87</td>
-                        <td>112</td>
-                        <td>Under maintenance</td>
-                        <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>26</td>
-                        <td>121</td>
-                        <td>Good condition</td>
-                        <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>102</td>
-                        <td>100</td>
-                        <td>Under maintenance</td>
-                        <td className='actions'>
-                            <button id='editing-btn'>Edit</button>
-                            <button id='delete-btn'>Delete</button>
+                            <Link to='/addroom'>
+                            <button id='editing-btn'>Edit</button></Link>
+                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
                     </tr>
                 </tbody>

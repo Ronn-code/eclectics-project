@@ -5,6 +5,8 @@
 .bars{
     display: flex;
     align-items: center;
+    gap: 2rem;
+    margin-left: 14%;
 }
 .bars a{
     text-decoration: none;
@@ -12,5 +14,22 @@
 .my-search-bar{
     margin-top: 2rem;
     margin-left: 0.5rem;
-    width: 40%;
+    width: 60%;
+}
+.rooms-container table{
+    margin-left: 16%;
+    margin-top: 1rem;
+    width: 70%;
+    background: white;
+    box-shadow: 2px 2px 3px gray;
+    padding: 1rem;
+    padding-left: 2rem;
+}
+.rooms-container table tbody td{
+    border: none;
+    height: 2.2rem;
+    font-size: 0.75rem;
+}
+.rooms-container table thead th{
+    text-align: start;
 }

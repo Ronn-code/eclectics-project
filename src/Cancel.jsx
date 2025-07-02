@@ -19,7 +19,7 @@ function Cancel() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr className='top-row'>
                     <td>21/04/2025</td>
                     <td>Room 101</td>
                     <td>10.00am</td>
@@ -59,16 +59,7 @@ function Cancel() {
                         <button id='remove-btn'>Remove</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>24/04/2025</td>
-                    <td>Room 115</td>
-                    <td>1.00pm</td>
-                    <td className='action-btn'>
-                        <Link to='/form'>
-                        <button id='edit-btn'>Edit</button></Link>
-                        <button id='remove-btn'>Remove</button>
-                    </td>
-                </tr>
+                
             </tbody>
         </table>
     </div>

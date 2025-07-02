@@ -1,0 +1,114 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "roomNumber": "RM101",
+      "name": "Physics Lab",
+      "capacity": 25,
+      "building": "Science Block",
+      "floor": "Ground",
+      "location": "North Wing",
+      "roomType": "LABORATORY",
+      "status": "AVAILABLE",
+      "active": true
+    },
+    {
+      "id": 2,
+      "roomNumber": "RM202",
+      "name": "Main Conference Room",
+      "capacity": 15,
+      "building": "Admin Block",
+      "floor": "1st",
+      "location": "West Wing",
+      "roomType": "CONFERENCE_ROOM",
+      "status": "OCCUPIED",
+      "active": true
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "alice",
+      "email": "alice@example.com",
+      "password": "hashedpassword123",
+      "fullName": "Alice Maina",
+      "role": "LECTURER",
+      "department": "Computer Science",
+      "active": true,
+      "createdAt": "2025-07-01T08:00:00",
+      "usageStreak": 5,
+      "totalBookings": 3,
+      "points": 120
+    },
+    {
+      "id": 2,
+      "username": "brian",
+      "email": "brian@example.com",
+      "password": "hashedpassword456",
+      "fullName": "Brian Kimani",
+      "role": "STUDENT",
+      "department": "Engineering",
+      "active": true,
+      "createdAt": "2025-06-28T09:15:00",
+      "usageStreak": 2,
+      "totalBookings": 1,
+      "points": 40
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "userId": 1,
+      "roomId": 1,
+      "startTime": "2025-07-05T09:00:00",
+      "endTime": "2025-07-05T10:00:00",
+      "purpose": "Physics Practical",
+      "status": "CONFIRMED",
+      "createdAt": "2025-07-01T08:00:00",
+      "updatedAt": "2025-07-01T08:30:00",
+      "notes": "Lab coat required",
+      "recurring": false,
+      "recurringGroupId": null
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "roomId": 2,
+      "startTime": "2025-07-06T14:00:00",
+      "endTime": "2025-07-06T16:00:00",
+      "purpose": "Project presentation",
+      "status": "CANCELLED",
+      "createdAt": "2025-07-01T09:00:00",
+      "updatedAt": "2025-07-01T09:15:00",
+      "notes": "Cancelled due to schedule conflict",
+      "recurring": false,
+      "recurringGroupId": null
+    }
+  ],
+  "equipment": [
+    {
+      "id": 1,
+      "name": "Projector",
+      "type": "PROJECTOR",
+      "description": "HD projector with HDMI support",
+      "working": true,
+      "roomId": 1
+    },
+    {
+      "id": 2,
+      "name": "Whiteboard",
+      "type": "WHITEBOARD",
+      "description": "Magnetic whiteboard with markers",
+      "working": true,
+      "roomId": 1
+    },
+    {
+      "id": 3,
+      "name": "Microphone",
+      "type": "MICROPHONE",
+      "description": "Wireless mic",
+      "working": false,
+      "roomId": 2
+    }
+  ]
+}
