@@ -1,8 +1,24 @@
+import { useEffect, useState } from 'react';
 import './admin.css';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 
 function Admin (){
+
+    const Navigate = useNavigate('');
+
+    const displayDetails = (id)=>{
+        Navigate("/view/user/" +id)
+    }
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() =>{
+        fetch('http://localhost:8001/users')
+        .then((res) =>res.json())
+        .then((data) =>setUsers(data))
+        .catch((err) =>console.log(err.message))
+    }, []);
     return(
         <div className="admin-container">
             <aside className='admin-aside'>
@@ -71,73 +87,35 @@ function Admin (){
                     
                 </div>
                 <div className="body-main">
-                    <h3>Booking History</h3>
+                    <h3>Active Users</h3>
                     <table>
                         <thead>
                             <tr>
-                                <th>Name</th>
+                                <th>Full Name</th>
+                                <th>Username</th>
                                 <th>Email</th>
-                                <th>Room number</th>
-                                <th>Capacity</th>
+                                <th>Role</th>
+                                <th>Department</th>
+                                <th>Streak</th>
+                                <th>CreatedOn</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Ann Culhane</td>
-                                <td>annculhane@gmail.co</td>
-                                <td>102</td>
-                                <td>100+</td>
-                                <td className='actions'>
-                                    <button id='review-btn'>Review</button>
+                            {users.map((item) =>(
+                                <tr key={item.id}>
+                                    <td>{item.fullName}</td>
+                                    <td>{item.username}</td>
+                                    <td>{item.email}</td>
+                                    <td>{item.role}</td>
+                                    <td>{item.department}</td>
+                                    <td>{item.usageStreak}</td>
+                                    <td>{item.createdAt}</td>
+                                    <td className='actions'>
+                                        <button id='review-btn'onClick={() => displayDetails(item.id)}>View</button>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>Ann Culhane</td>
-                                <td>annculhane@gmail.co</td>
-                                <td>102</td>
-                                <td>100+</td>
-                                <td className='actions'>
-                                    <button id='review-btn'>Review</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ann Culhane</td>
-                                <td>annculhane@gmail.co</td>
-                                <td>102</td>
-                                <td>100+</td>
-                                <td className='actions'>
-                                    <button id='review-btn'>Review</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ann Culhane</td>
-                                <td>annculhane@gmail.co</td>
-                                <td>102</td>
-                                <td>100+</td>
-                                <td className='actions'>
-                                    <button id='review-btn'>Review</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ann Culhane</td>
-                                <td>annculhane@gmail.co</td>
-                                <td>102</td>
-                                <td>100+</td>
-                                <td className='actions'>
-                                    <button id='review-btn'>Review</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ann Culhane</td>
-                                <td>annculhane@gmail.co</td>
-                                <td>102</td>
-                                <td>100+</td>
-                                <td className='actions'>
-                                    <button id='review-btn'>Review</button>
-                                </td>
-                            </tr>
-                            
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>

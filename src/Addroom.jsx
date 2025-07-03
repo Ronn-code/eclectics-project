@@ -4,30 +4,32 @@ import './addroom.css';
 
 function Addroom() {
 
-const [roomNo, setRoomNo] = useState('');
+const [roomNumber, setRoomNumber] = useState('');
 const [roomType, setRoomType] = useState('');
 const [capacity, setCapacity] = useState('');
+const [building, setBuilding] = useState('');
+const [name, setName] = useState('');
+const [status, setStatus] = useState('');
 const Navigate = useNavigate('');
 
-const handleAdd = () =>{
-    if(roomNo && roomType && capacity) {
-        alert(`Room added \nRoom Number: ${roomNo} \nRoom Type: ${roomType} \nCapacity: ${capacity}`);
-        Navigate('/admin')
+const handleSubmit = (e) =>{
+  e.preventDefault();
+  const rooms = {roomNumber, roomType, name, capacity, status, building};
+  console.log(rooms);
 
-
-        setRoomNo('');
-        setRoomType('');
-        setCapacity('');
-    }
-    else{
-        alert('Fill in all the fields');
-
-        setRoomNo('');
-        setRoomType('');
-        setCapacity('');
-    }
-};
-
+  fetch('http://localhost:8001/rooms',{
+    method: 'POST',
+    headers: {
+      'content-type' : 'application/json'
+    },
+    body: JSON.stringify(rooms)
+  })
+  .then((res) =>{
+    alert('New Room Added Successfully');
+    Navigate('/admin')
+  })
+  .catch((err) =>console.log(err.message))
+}
 
   return (
     <div className='add-room-container'>
@@ -37,32 +39,45 @@ const handleAdd = () =>{
             <label htmlFor='roomNo'>Room Number</label>
             <input type='number' 
                    id='roonNo' 
-                   value={roomNo}
-                   onChange={(e) => setRoomNo(e.target.value)}
-                   required></input>
+                   value={roomNumber}
+                   onChange={(e) => setRoomNumber(e.target.value)}placeholder='101'></input>
+        </div>
+        <div className="name">
+            <label htmlFor='name'>Name</label>
+            <input  type='text'
+                    id='name'
+                    value={name} 
+                    onChange={(e) => setName(e.target.value)}placeholder='physics lab'></input>
         </div>
         <div className="room-type">
             <label htmlFor='roomType'>Room Type</label>
-            <select id='roomType'
+            <input  id='roomType'
+                    type='text'
                     value={roomType} 
-                    onChange={(e) => setRoomType(e.target.value)} 
-                    required>
-                <option value='' disabled selected>Select Type</option>
-                <option value='lecture hall'>Lecture Hall</option>
-                <option value='science labaratory'>Science Labaratory</option>
-                <option value='computer lab'>Computer Lab</option>
-                <option value='class'>Class</option>
-            </select>
+                    onChange={(e) => setRoomType(e.target.value)}placeholder='Main conference hall'></input>
+        </div>
+         <div className="building">
+            <label htmlFor='building'>Building</label>
+            <input  type='text'
+                    id='building'
+                    value={building}
+                    onChange={(e) => setBuilding(e.target.value)}placeholder='Kilele block'></input>
         </div>
         <div className="capacity">
             <label htmlFor='capacity'>Capacity</label>
-            <input type='number'
+            <input type='text'
              id='capacity'
              value={capacity}
-             onChange={(e) => setCapacity(e.target.value)} 
-             required></input>
+             onChange={(e) => setCapacity(e.target.value)}placeholder='100'></input>
         </div>
-        <button id='add'onClick={handleAdd}>Add Room</button>
+         <div className="status">
+            <label htmlFor='status'>Status</label>
+            <input type='text'
+             id='status'
+             value={status}
+             onChange={(e) => setStatus(e.target.value)}placeholder='Available'></input>
+        </div>
+        <button id='add'onClick={handleSubmit}>Add Room</button>
       </div>
     </div>
   )

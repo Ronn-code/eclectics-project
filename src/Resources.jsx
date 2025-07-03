@@ -1,7 +1,17 @@
+import { useEffect, useState } from 'react';
 import './resources.css';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Resources(){
+
+    const[equipment, setEquipment] = useState([]);
+
+    useEffect(() =>{
+        fetch('http://localhost:8001/equipment')
+        .then((res) =>res.json())
+        .then((data)=>setEquipment(data))
+        .catch((err)=>console.log(err.message))
+    }, []);
 
     const Navigate = useNavigate('');
     const handleDelete = () => {
@@ -20,47 +30,24 @@ function Resources(){
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Quantity</th>
+                        <th>Type</th>
+                        <th>Description</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Projector</td>
-                        <td>23</td>
-                        <td className='actions'>
-                            <Link to='/addresource'>
-                            <button id='editing-btn'>Edit</button></Link>
-                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
+                    {equipment.map((item)=>(
+                        <tr key={item.id}>
+                            <td>{item.name}</td>
+                            <td>{item.type}</td>
+                            <td>{item.description}</td>
+                            <td className='actions'>
+                                <Link to='/addresource'>
+                                <button id='editing-btn'>Edit</button></Link>
+                                <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>Screen</td>
-                        <td>31</td>
-                        <td className='actions'>
-                            <Link to='/addresource'>
-                            <button id='editing-btn'>Edit</button></Link>
-                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Computers</td>
-                        <td>76</td>
-                        <td className='actions'>
-                            <Link to='/addresource'>
-                            <button id='editing-btn'>Edit</button></Link>
-                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Whiteboard</td>
-                        <td>12</td>
-                        <td className='actions'>
-                            <Link to='/addresource'>
-                            <button id='editing-btn'>Edit</button></Link>
-                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
-                        </td>
-                    </tr>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

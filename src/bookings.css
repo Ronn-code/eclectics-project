@@ -25,15 +25,26 @@
     margin-left: 10%;
     margin-top: 1.4rem;
     width: 78%;
+    border-collapse: collapse;
 }
 .booking-container table tbody td{
     text-align: left;
     height: 2.4rem;
     font-size: 0.76rem;
+    padding-left: 1rem;
+    padding-top: 0.7rem;
 }
 .booking-container table thead th{
     text-align: start;
-} a{
+    padding-left: 1rem;
+    font-size: 0.8rem;
+}
+.booking-container table thead{
+    background-color: gray;
+    color: #e7e6e6;
+    height: 3rem;
+} 
+a{
     color: rgb(4,97,46);
     cursor: pointer;
 }

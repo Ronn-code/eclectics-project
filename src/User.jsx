@@ -1,7 +1,17 @@
+import { useEffect, useState } from 'react';
 import './user.css';
 import { Link, useNavigate } from 'react-router-dom';
 
 function User(){
+
+    const[users, setUsers] = useState([]);
+
+    useEffect(() =>{
+        fetch('http://localhost:8001/users')
+        .then((res) =>res.json())
+        .then((data) =>setUsers(data))
+        .catch((err) =>console.log(err.message))
+    }, []);
     
     const Navigate = useNavigate('');
 
@@ -20,93 +30,32 @@ function User(){
             <table>
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Full Name</th>
+                        <th>Username</th>
                         <th>Email</th>
                         <th>Role</th>
+                        <th>Department</th>
+                        <th>Total bookings</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Dr.Albert Simiyu</td>
-                        <td>albertsimiyu@gmail.com</td>
-                        <td>Lecturer</td>
-                        <td className='actions'>
-                            <Link to='/adduser'>
-                            <button id='editing-btn'>Edit</button></Link>
-                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
+                    
+                    {users.map((item)=>(
+                        <tr key={item.id}>
+                            <td >{item.fullName}</td>
+                            <td>{item.username}</td>
+                            <td>{item.email}</td>
+                            <td>{item.role}</td>
+                            <td>{item.department}</td>
+                            <td>{item.totalBookings}</td>
+                            <td className='actions'>
+                                <Link to='/adduser'>
+                                <button id='editing-btn'>Edit</button></Link>
+                                <button id='delete-btn'onClick={handleDelete}>Delete</button>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>Dr.Albert Simiyu</td>
-                        <td>albertsimiyu@gmail.com</td>
-                        <td>Lecturer</td>
-                        <td className='actions'>
-                            <Link to='/adduser'>
-                            <button id='editing-btn'>Edit</button></Link>
-                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dr.Albert Simiyu</td>
-                        <td>albertsimiyu@gmail.com</td>
-                        <td>Lecturer</td>
-                        <td className='actions'>
-                            <Link to='/adduser'>
-                            <button id='editing-btn'>Edit</button></Link>
-                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dr.Albert Simiyu</td>
-                        <td>albertsimiyu@gmail.com</td>
-                        <td>Lecturer</td>
-                        <td className='actions'>
-                            <Link to='/adduser'>
-                            <button id='editing-btn'>Edit</button></Link>
-                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dr.Albert Simiyu</td>
-                        <td>albertsimiyu@gmail.com</td>
-                        <td>Lecturer</td>
-                        <td className='actions'>
-                            <Link to='/adduser'>
-                            <button id='editing-btn'>Edit</button></Link>
-                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dr.Albert Simiyu</td>
-                        <td>albertsimiyu@gmail.com</td>
-                        <td>Lecturer</td>
-                        <td className='actions'>
-                            <Link to='/adduser'>
-                            <button id='editing-btn'>Edit</button></Link>
-                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dr.Albert Simiyu</td>
-                        <td>albertsimiyu@gmail.com</td>
-                        <td>Lecturer</td>
-                        <td className='actions'>
-                            <Link to='/adduser'>
-                            <button id='editing-btn'>Edit</button></Link>
-                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dr.Albert Simiyu</td>
-                        <td>albertsimiyu@gmail.com</td>
-                        <td>Lecturer</td>
-                        <td className='actions'>
-                            <Link to='/adduser'>
-                            <button id='editing-btn'>Edit</button></Link>
-                            <button id='delete-btn'onClick={handleDelete}>Delete</button>
-                        </td>
-                    </tr>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

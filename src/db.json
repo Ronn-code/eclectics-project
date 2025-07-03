@@ -1,7 +1,7 @@
 {
   "rooms": [
     {
-      "id": 1,
+      "id": "1",
       "roomNumber": "RM101",
       "name": "Physics Lab",
       "capacity": 25,
@@ -13,7 +13,7 @@
       "active": true
     },
     {
-      "id": 2,
+      "id": "2",
       "roomNumber": "RM202",
       "name": "Main Conference Room",
       "capacity": 15,
@@ -23,11 +23,29 @@
       "roomType": "CONFERENCE_ROOM",
       "status": "OCCUPIED",
       "active": true
+    },
+    {
+      "id": "64be",
+      "roomNumber": "123",
+      "roomType": "Dinning Hall",
+      "name": "Mess",
+      "capacity": "232",
+      "status": "available",
+      "building": "Kilele block"
+    },
+    {
+      "id": "b445",
+      "roomNumber": "20",
+      "roomType": "Laboratory",
+      "name": "Computer lab",
+      "capacity": "45",
+      "status": "available",
+      "building": "Admin block"
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "alice",
       "email": "alice@example.com",
       "password": "hashedpassword123",
@@ -41,7 +59,7 @@
       "points": 120
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "brian",
       "email": "brian@example.com",
       "password": "hashedpassword456",
@@ -53,11 +71,34 @@
       "usageStreak": 2,
       "totalBookings": 1,
       "points": 40
+    },
+    {
+      "id": "7796",
+      "fullName": "Hellen Naomi",
+      "username": "ronn",
+      "email": "hellennaomi001@gmail.com",
+      "department": "computer science",
+      "role": "lecturer",
+      "totalBookings": "0",
+      "usageStreak": "0",
+      "createdAt": "2025-08-01T09:00:00"
+    },
+    {
+      "id": "c130",
+      "fullName": "Jess Chomba",
+      "username": "jess",
+      "email": "jesschomba232@gmail.com",
+      "department": "Education",
+      "role": "Lecturer",
+      "totalBookings": "0",
+      "usageStreak": "0",
+      "createdAt": "2025-07-03T03:40:00"
     }
+   
   ],
   "bookings": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "roomId": 1,
       "startTime": "2025-07-05T09:00:00",
@@ -71,7 +112,7 @@
       "recurringGroupId": null
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 2,
       "roomId": 2,
       "startTime": "2025-07-06T14:00:00",
@@ -87,7 +128,7 @@
   ],
   "equipment": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Projector",
       "type": "PROJECTOR",
       "description": "HD projector with HDMI support",
@@ -95,7 +136,7 @@
       "roomId": 1
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Whiteboard",
       "type": "WHITEBOARD",
       "description": "Magnetic whiteboard with markers",
@@ -103,12 +144,18 @@
       "roomId": 1
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Microphone",
       "type": "MICROPHONE",
       "description": "Wireless mic",
       "working": false,
       "roomId": 2
+    },
+    {
+      "id": "6d81",
+      "name": "microphone",
+      "type": "microphone",
+      "description": "Clipped wireless"
     }
   ]
 }

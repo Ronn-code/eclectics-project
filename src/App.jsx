@@ -14,6 +14,8 @@ import Rooms from "./Rooms";
 import Addroom from "./Addroom";
 import Addresource from "./Addresource";
 import Adduser from "./Adduser";
+import Mybookings from "./Mybookings";
+import Viewuser from "./Viewuser";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
@@ -27,8 +29,9 @@ function App() {
         <Route path="/alogin" element={<Alogin/>}/>
         <Route path="/setting" element={<Setting/>}/>
         <Route path="/asetting" element={<Asetting/>}/>
-        <Route path='/form' element={<Form/>}/>
+        <Route path='/form/:roomid' element={<Form/>}/>
         <Route path="/admin"element={<Admin/>}/>
+        <Route path="/mybookings"element={<Mybookings/>}/>
         <Route path="/bookings"element={<Bookings/>}/>
         <Route path="/resource1"element={<Resource1/>}/>
         <Route path="/user"element={<User/>}/>
@@ -37,6 +40,7 @@ function App() {
         <Route path="/addresource" element={<Addresource/>}/>
         <Route path="/adduser" element={<Adduser/>}/>
         <Route path="/resources"element={<Resources/>}/>
+        <Route path="/view/user/:userid" element={<Viewuser/>}/>
       </Routes></BrowserRouter>
   );
 }

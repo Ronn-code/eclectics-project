@@ -1,7 +1,13 @@
 .admin-container{
     display: grid;
-    grid-template-columns: 24rem auto;
+    grid-template-columns: 20rem auto;
     font-family: Roboto;
+}
+.view-user-container{
+    font-family: Roboto;
+    width: 70%;
+    margin-top: 10%;
+    margin-left: 16rem;
 }
 .admin-container h2{
     color: rgb(4, 97, 46);
@@ -78,23 +84,36 @@ main{
 .body-main h3{
     margin-left: 0rem;
 }
-.body-main table{
+.body-main table,
+.view-user-container table{
     background: white;
     border-radius: 20px;
     padding: 1rem;
-    border-radius: 20px;
+    border-radius: 0px;
     box-shadow: 2px 2px 3px gray;
     width: 80%;
+    border-collapse: collapse;
 }
-.body-main table tbody td{
-    height: 2.2rem;
-    width: 10rem;
+.body-main table thead,
+.view-user-container table thead{
+    background-color: gray;
+    color: #e7e6e6;
+    height: 3rem;
+}
+.body-main table tbody td,
+.view-user-container table tbody td{
+    height: 2.4rem;
+    width: 99%;
     border: none;
-    font-size: 0.76rem;
-   
+    font-size: 0.76rem; 
+    padding-left: 1rem;
+    padding-top: 0.7rem;
 }
-.body-main table thead th{
+.body-main table thead th,
+.view-user-container table thead th{
     text-align: start;
+    padding-left: 1rem;
+    font-size: 0.8rem;
 }
 #review-btn{
     height: 1.8rem;

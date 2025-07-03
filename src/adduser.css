@@ -1,7 +1,7 @@
 .add-user-container{
     font-family: Roboto;
     margin-left: 20rem;
-    width: 50%;
+    width: 40%;
     margin-top: 5rem;
     background: rgb(233, 232, 232);
 }
@@ -12,19 +12,19 @@ h2{
    font-size: 1rem;
    font-weight: 400;
 }
-.name,.email,.phone,.role{
+.name,.email,.department,.role,.uname, .total,.streak,.time{
    display: flex;
    flex-direction: column;
    margin-bottom: 1rem;
 }
 .add-user-container label{
-    margin-left: 10rem;
+    margin-left: 8rem;
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
 }
 .add-user-container input[type="text"],
 .add-user-container input[type="number"]{
-  margin-left: 10rem;
+  margin-left: 8rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 50%;
@@ -37,8 +37,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .add-user-container #add{
     height: 2rem;
-    width: 30%;
-    margin-left: 15rem;
+    width: 52%;
+    margin-left: 8rem;
     border-radius: 10px;
     border: none;
     color: #fff;

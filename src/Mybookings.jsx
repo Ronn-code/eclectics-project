@@ -2,7 +2,7 @@ import './cancel.css';
 import {Link} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-function Cancel() {
+function Mybookings() {
     const [bookings, setBookings] = useState([]);
     
     useEffect(() => {
@@ -34,7 +34,6 @@ function Cancel() {
                         <th>purpose</th>
                         <th>notes</th>
                         <th>status</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,11 +44,6 @@ function Cancel() {
                             <td>{item.purpose}</td>
                             <td>{item.notes}</td>
                             <td>{item.status}</td>
-                            <td className='action-btn'>
-                                <Link to={`/form/${item.id}`}>
-                                <button id='edit-btn'>Edit</button></Link>
-                                <button id='remove-btn'>Remove</button>
-                            </td>
                         </tr>
                     ))}
                 </tbody>
@@ -58,4 +52,4 @@ function Cancel() {
   )
 }
 
-export default Cancel
+export default Mybookings;

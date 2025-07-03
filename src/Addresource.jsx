@@ -5,56 +5,57 @@ import { useNavigate } from 'react-router-dom';
 function Addresource() {
 
 
-const [resourceName, setResourceName] = useState('');
-const [quantity, setQuantity] = useState('');
-const [assign, setAssign] = useState('');
+const [name, setName] = useState('');
+const [type, setType] = useState('');
+const [description, setDescription] = useState('');
 const Navigate = useNavigate('');
 
+const handleSubmit = (e)=>{
+  e.preventDefault();
 
-const handleAdd = () => {
-    if(resourceName && quantity && assign){
-        alert(`Resource added \nResource Name: ${resourceName} \nQuantity: ${quantity} \nAssigned to Room: ${assign}`);
-        Navigate('/admin')
-    }
-    else{
-        alert('Fill in all the fields');
+  const equipment = {name, type, description};
+  console.log(equipment);
 
-        setResourceName('');
-        setQuantity('');
-        setAssign('');
-    }
-};
-
+  fetch('http://localhost:8001/equipment', {
+    method: 'POST',
+    headers: {
+      'content-type' : 'application/json'
+    },
+    body: JSON.stringify(equipment)
+  })
+  .then((res)=>{
+    alert("New Resource Added  Successfully");
+    Navigate('/admin')
+  })
+  .catch((err)=>console.log(err.message))
+}
 
   return (
     <div className='add-resource-container'> 
       <h2>Add New Resource</h2>
       <div className="form-group">
         <div className="resource-name">
-            <label htmlFor='resourceName'>Resource Name</label>
+            <label htmlFor='ame'>Resource Name</label>
             <input type='text'
-                   id='resourceName' 
-                   value={resourceName}
-                   onChange={(e)=> setResourceName(e.target.value)}
-                   required></input>
+                   id='name' 
+                   value={name}
+                   onChange={(e)=> setName(e.target.value)}placeholder='name of resource'></input>
         </div>
-        <div className="quantity">
-            <label htmlFor='quantity'>Quantity</label>
-            <input type='number' 
-                   id='quantity'
-                   value={quantity} 
-                   onChange={(e) => setQuantity(e.target.value)}
-                   required></input>
+        <div className="type">
+            <label htmlFor='type'>Type</label>
+            <input type='text' 
+                   id='type'
+                   value={type} 
+                   onChange={(e) => setType(e.target.value)}placeholder='type'></input>
         </div>
-        <div className="assign">
-            <label htmlFor='assign'>Assign to Room</label>
-            <input type='number'
-                   id='assign'
-                   value={assign} 
-                   onChange={(e) => setAssign(e.target.value)}
-                   required></input>
+        <div className="description">
+            <label htmlFor='description'>Description</label>
+            <input type='text' 
+                   id='description'
+                   value={description} 
+                   onChange={(e) => setDescription(e.target.value)}placeholder='description'></input>
         </div>
-        <button id='add' onClick={handleAdd}>Add Room</button>
+        <button id='add' onClick={handleSubmit}>Add Resource</button>
       </div>
     </div>
   )
