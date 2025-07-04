@@ -16,6 +16,9 @@ import Addresource from "./Addresource";
 import Adduser from "./Adduser";
 import Mybookings from "./Mybookings";
 import Viewuser from "./Viewuser";
+import EditUser from "./EditUser";
+import EditRoom from "./EditRoom";
+import EditResource from "./EditResource";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
@@ -41,6 +44,10 @@ function App() {
         <Route path="/adduser" element={<Adduser/>}/>
         <Route path="/resources"element={<Resources/>}/>
         <Route path="/view/user/:userid" element={<Viewuser/>}/>
+        <Route path="/edit/user/:userid" element={<EditUser/>}/>
+        <Route path="/edit/room/:roomid" element={<EditRoom/>}/>
+        <Route path="/edit/resource/:equipmentid" element={<EditResource/>}/>
+        
       </Routes></BrowserRouter>
   );
 }

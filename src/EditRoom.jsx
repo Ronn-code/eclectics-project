@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import './addroom.css';
 
-function Addroom() {
+function EditRoom() {
 
 const [roomNumber, setRoomNumber] = useState('');
 const [roomType, setRoomType] = useState('');
@@ -12,23 +12,41 @@ const [name, setName] = useState('');
 const [status, setStatus] = useState('');
 const Navigate = useNavigate('');
 
+const {roomid} = useParams();
+
+useEffect(()=>{
+    fetch('http://localhost:8001/rooms/'+roomid)
+    .then((res)=>res.json())
+    .then((data)=>{
+        setRoomNumber(data.roomNumber);
+        setRoomType(data.roomType);
+        setName(data.name);
+        setCapacity(data.capacity);
+        setBuilding(data.building);
+        setStatus(data.status)
+    })
+    .catch((err)=>console.log(err.message))
+}, []);
+
 const handleSubmit = (e) =>{
   e.preventDefault();
   const rooms = {roomNumber, roomType, name, capacity, status, building};
-  console.log(rooms);
 
-  fetch('http://localhost:8001/rooms',{
-    method: 'POST',
+  fetch('http://localhost:8001/rooms/'+roomid,{
+    method: 'PUT',
     headers: {
       'content-type' : 'application/json'
     },
     body: JSON.stringify(rooms)
   })
   .then((res) =>{
-    alert('New Room Added Successfully');
-    Navigate('/admin')
+    alert('Room Details Updated Successfully');
+    Navigate('/rooms')
   })
   .catch((err) =>console.log(err.message))
+}
+const handleBack = ()=>{
+    Navigate('/rooms')
 }
 
   return (
@@ -38,7 +56,7 @@ const handleSubmit = (e) =>{
         <div className="room-number">
             <label htmlFor='roomNo'>Room Number</label>
             <input type='text' 
-                   id='roonNo' 
+                   id='roomNo' 
                    value={roomNumber}
                    onChange={(e) => setRoomNumber(e.target.value)}placeholder='101'></input>
         </div>
@@ -77,10 +95,13 @@ const handleSubmit = (e) =>{
              value={status}
              onChange={(e) => setStatus(e.target.value)}placeholder='Available'></input>
         </div>
-        <button id='add'onClick={handleSubmit}>Add Room</button>
-      </div>
+        <div className="edits-btn">
+            <button id='btn-edit' onClick={handleSubmit}>Update</button>
+            <button id='back-btn'onClick={handleBack}>Back</button>
+            </div>
+        </div>
     </div>
   )
 }
 
-export default Addroom
+export default EditRoom

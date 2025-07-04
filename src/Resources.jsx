@@ -4,6 +4,9 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function Resources(){
 
+    const editDetails = (id)=>{
+        Navigate('/edit/resource/' +id)
+    }
     const[equipment, setEquipment] = useState([]);
 
     useEffect(() =>{
@@ -17,6 +20,18 @@ function Resources(){
     const handleDelete = () => {
         alert(`Are You Sure You Want To Delete Data`);
         Navigate('/admin');
+    }
+    const removeDetails = (id) =>{
+        if(window.confirm('Are You Sure You want to Delete?')){
+            fetch('http://localhost:8001/equipment/' +id,{
+                method: 'DELETE',
+            })
+            .then((res)=>{
+                alert("Resource Deleted");
+                window.location.reload();
+            })
+            .catch((err)=>(err.message))
+        }
     }
     return(
         <div className="resources-container">
@@ -38,13 +53,12 @@ function Resources(){
                 <tbody>
                     {equipment.map((item)=>(
                         <tr key={item.id}>
-                            <td>{item.name}</td>
-                            <td>{item.type}</td>
+                            <td>{item.name.toUpperCase()}</td>
+                            <td>{item.type.toLowerCase()}</td>
                             <td>{item.description}</td>
                             <td className='actions'>
-                                <Link to='/addresource'>
-                                <button id='editing-btn'>Edit</button></Link>
-                                <button id='delete-btn'onClick={handleDelete}>Delete</button>
+                                <button id='editing-btn'onClick={()=>editDetails(item.id)}>Edit</button>
+                                <button id='delete-btn'onClick={()=>removeDetails(item.id)}>Delete</button>
                         </td>
                         </tr>
                     ))}

@@ -4,6 +4,10 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function User(){
 
+    const editDetails = (id)=>{
+        Navigate("/edit/user/" +id)
+    }
+
     const[users, setUsers] = useState([]);
 
     useEffect(() =>{
@@ -18,6 +22,19 @@ function User(){
     const handleDelete = () => {
         alert(`Are You Sure You Want To Delete Data`);
         Navigate('/admin')
+    }
+
+    const removeDetails = (id) =>{
+        if(window.confirm('Are You Sure You want to Delete?')){
+            fetch('http://localhost:8001/users/' +id,{
+                method: 'DELETE',
+            })
+            .then((res)=>{
+                alert("User Deleted");
+                window.location.reload();
+            })
+            .catch((err)=>(err.message))
+        }
     }
     return(
         <div className="user-container">
@@ -46,13 +63,12 @@ function User(){
                             <td >{item.fullName}</td>
                             <td>{item.username}</td>
                             <td>{item.email}</td>
-                            <td>{item.role}</td>
+                            <td>{item.role.toUpperCase()}</td>
                             <td>{item.department}</td>
                             <td>{item.totalBookings}</td>
                             <td className='actions'>
-                                <Link to='/adduser'>
-                                <button id='editing-btn'>Edit</button></Link>
-                                <button id='delete-btn'onClick={handleDelete}>Delete</button>
+                                <button id='editing-btn'onClick={()=>editDetails(item.id)}>Edit</button>
+                                <button id='delete-btn'onClick={()=>removeDetails(item.id)}>Delete</button>
                         </td>
                         </tr>
                     ))}

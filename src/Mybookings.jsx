@@ -18,6 +18,18 @@ function Mybookings() {
             console.error('Failed to fetch booking data:', err);
          });
     }, []);
+    const removeDetails = (id) =>{
+        if(window.confirm('Are You Sure You want to Delete?')){
+            fetch('http://localhost:8001/bookings/' +id,{
+                method: 'DELETE',
+            })
+            .then((res)=>{
+                alert("Booking Deleted");
+                window.location.reload();
+            })
+            .catch((err)=>(err.message))
+        }
+    }
   return (
     <div className='cancel-page'>
         <div className="top-cancel">
@@ -31,9 +43,11 @@ function Mybookings() {
                     <tr>
                         <th>startTime</th>
                         <th>endTime</th>
+                        <th>Room Number</th>
                         <th>purpose</th>
                         <th>notes</th>
                         <th>status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,9 +55,13 @@ function Mybookings() {
                         <tr className='top-row'key={item.id}>
                             <td>{item.startTime}</td>
                             <td>{item.endTime}</td>
+                            <td>{item.roomNumber}</td>
                             <td>{item.purpose}</td>
                             <td>{item.notes}</td>
-                            <td>{item.status}</td>
+                            <td>{item.status.toUpperCase()}</td>
+                            <td className='action-btn'>
+                                <button id='remove-btn'onClick={() => removeDetails(item.id)}>Remove</button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

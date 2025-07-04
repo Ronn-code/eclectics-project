@@ -13,29 +13,40 @@ function Form(){
   useEffect(() =>{
     fetch('http://localhost:8001/rooms/' +roomid)
     .then((res) => res.json())
-    .then((data) =>setRoom(data))
+    .then((data) =>{setRoom(data);
+        setRoomNumber(data.roomNumber);
+        setStatus(data.status);})
     .catch((err) =>console.log(err.message))
   },[]);
 
 const [today, setToday] = useState('');
-const [date, setDate] = useState('');
-const [time, setTime] = useState('');
+const [startTime, setStartTime] = useState('');
+const [endTime, setEndTime] = useState('');
+const [roomNumber, setRoomNumber] =useState('');
+const [purpose, setPurpose] = useState('');
+const [notes, setNotes] = useState('');
+const[status, setStatus]=useState("");
 const Navigate = useNavigate('');
 
-useEffect(() =>{
-    const now = new Date();
-    const formatted = now.toISOString().split('T')[0];
-    setToday(formatted);
-}, []);
+const handleSave = (e) =>{
+    e.preventDefault();
 
-const handleSave = () =>{
-    if (!date || !time){
-        alert('Please fill in both date and time')
-        return;
-    }
-    alert('Booking saved successfully');
-    Navigate('/')
-};
+    const bookings = {startTime, endTime, roomNumber,status, purpose, notes};
+    console.log(bookings);
+    
+    fetch('http://localhost:8001/bookings',{
+        method: 'POST',
+        headers: {
+            "content-type" : "application/json"
+        },
+        body: JSON.stringify(bookings)
+    })
+    .then((res)=>{
+        alert('Booking Done');
+        Navigate('/')
+    })
+    .catch((err)=>console.log(err.message))
+}
 
 const handleEdit =() =>{
     Navigate('/');
@@ -52,13 +63,27 @@ const handleEdit =() =>{
                     <h4><b>Room Type:</b> {room.roomType}</h4>
                     <h4><b>Name:</b> {room.name}</h4>
                     <h4><b>Capacity:</b> {room.capacity}</h4>
+                    <h4><b>Status:</b> {room.status}</h4>
                 </div>
             )}
             <div className="select-period">
-                <label htmlForfor='date'>Date</label>
-                <input type='date'id='date' min={today} value={date} onChange={(e) => setDate(e.target.value)}></input><br></br>
-                <label Htmlfor='time'>Time</label>
-                <input type='time' id='time'value={time} onChange={(e) => setTime(e.target.value)}></input>
+                <div className="start">
+                    <label htmlForfor='start'>startTime</label>
+                    <input type='time'id='start' value={startTime} onChange={(e) => setStartTime(e.target.value)}></input>
+                </div>
+                <div className="end">
+                    <label htmlForfor='end'>startTime</label>
+                    <input type='time'id='end' value={endTime} onChange={(e) => setEndTime(e.target.value)}></input>
+                </div>
+                
+                <div className="purpose">
+                    <label Htmlfor='purpose'>Purpose</label>
+                    <input type='text' id='purpose'value={purpose} onChange={(e) => setPurpose(e.target.value)}></input>
+                </div>
+                <div className="notes">
+                    <label Htmlfor='notes'>Notes</label>
+                    <input type='text' id='notes'value={notes} onChange={(e) => setNotes(e.target.value)}></input>
+                </div>
             </div>
             <div className="final-btn">
                 <button id='btn-save' onClick={handleSave}>Save</button>

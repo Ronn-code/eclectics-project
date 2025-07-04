@@ -64,8 +64,6 @@ const navigate = useNavigate();
             </div>
             <Link to='/mybookings'>
             <button id='booked-btn'>My bookings</button></Link>
-            <Link to='/cancel'>
-            <button id='cancel-btn'>Cancel bookings</button></Link>
             <div className="logout">
               <Link to="/login">
               <span className='material-icons-sharp'>logout</span></Link>
@@ -102,9 +100,9 @@ const navigate = useNavigate();
                                 <img src={room4}></img>
                                 <div className="room-details" key={item.roomNumber}>
                                     <h4><b>Room No:</b> {item.roomNumber}</h4>
-                                    <h4><b>Room Type:</b> {item.roomType}</h4>
+                                    <h4><b>Room Type:</b> {item.roomType.toLowerCase()}</h4>
                                     <h4><b>Capacity:</b> {item.capacity}</h4>
-                                    <h4><b>Status:</b> {item.status}</h4>
+                                    <h4><b>Status:</b> {item.status.toUpperCase()}</h4>
                                     <Link to={`/form/${item.id}`}>
                                     <button onClick={()=> displayDetails(item.id)} id='book-btn'>Add booking</button></Link>
                                 </div> 

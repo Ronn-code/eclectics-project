@@ -107,7 +107,7 @@ function Admin (){
                                     <td>{item.fullName}</td>
                                     <td>{item.username}</td>
                                     <td>{item.email}</td>
-                                    <td>{item.role}</td>
+                                    <td>{item.role.toUpperCase()}</td>
                                     <td>{item.department}</td>
                                     <td>{item.usageStreak}</td>
                                     <td>{item.createdAt}</td>
